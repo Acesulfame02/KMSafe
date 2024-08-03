@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="Safe.Pages.FullReportPage"
+               CanBeDismissedByTappingOutsideOfPopup="False">
+    <ScrollView>
+        <Frame Padding="20" CornerRadius="10" HasShadow="True" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="300">
+            <StackLayout Spacing="10">
+
+                <Label Text="Report Details" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Date" FontAttributes="Bold"/>
+                        <Label Text="{Binding Date}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Time" FontAttributes="Bold"/>
+                        <Label Text="{Binding Time}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Email" FontAttributes="Bold"/>
+                        <Label Text="{Binding UserId}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Title" FontAttributes="Bold"/>
+                        <Label Text="{Binding Title}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Type" FontAttributes="Bold"/>
+                        <Label Text="{Binding Type}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Severity" FontAttributes="Bold"/>
+                        <Label Text="{Binding Severity}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Message" FontAttributes="Bold"/>
+                        <Label Text="{Binding Message}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <StackLayout>
+                        <Label Text="Description" FontAttributes="Bold"/>
+                        <Label Text="{Binding Description}" WidthRequest="250" LineBreakMode="WordWrap" LineHeight="1.8" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Cancel Button -->
+                <Button Text="Cancel"
+                        FontSize="18"
+                        TextColor="White"
+                        BackgroundColor="#007AFF"
+                        Clicked="OnCancelButtonClicked"
+                        HorizontalOptions="Center"/>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</toolkit:Popup>

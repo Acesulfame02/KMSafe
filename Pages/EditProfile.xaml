@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="Safe.Pages.EditProfile"
+               CanBeDismissedByTappingOutsideOfPopup="False">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+
+            <Label Text="Your personal details" FontAttributes="Bold" FontSize="Medium"/>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout>
+                    <Label Text="Name" FontAttributes="Bold"/>
+                    <Entry Text="{Binding Profile.Username}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout>
+                    <Label Text="Campus Address" FontAttributes="Bold"/>
+                    <Entry Text="{Binding Profile.CampusAddress}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout>
+                    <Label Text="Health ID" FontAttributes="Bold"/>
+                    <Entry Text="{Binding Profile.HealthId}" IsEnabled="False"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout>
+                    <Label Text="Phone Number" FontAttributes="Bold"/>
+                    <Entry Text="{Binding Profile.PhoneNumber}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout>
+                    <Label Text="Email" FontAttributes="Bold"/>
+                    <Entry Text="{Binding Profile.Email}" IsEnabled="False"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Submit Update Button -->
+            <Button Text="Submit Update"
+                    FontSize="18"
+                    TextColor="White"
+                    BackgroundColor="#007AFF"
+                    Command="{Binding SubmitUpdateCommand}"/>
+        </StackLayout>
+    </ScrollView>
+</toolkit:Popup>

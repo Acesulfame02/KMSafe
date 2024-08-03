@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Safe.ViewModel"
+             x:Class="Safe.Pages.ProfilePage"
+             Shell.NavBarIsVisible="False"
+             Title="ProfilePage">
+    <ContentPage.BindingContext>
+        <vm:ProfileViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Spacing="20">
+            <!-- Header with Background Gradient and User Info -->
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Gradient Background -->
+                    <BoxView Grid.Row="0" BackgroundColor="Purple"
+                             CornerRadius="0,0,100,100" HeightRequest="200" />
+
+                    <!-- User Info -->
+                    <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image Source="profile_placeholder.png" WidthRequest="80" HeightRequest="80" />
+                        <Label Text="{Binding Profile.Username}" FontSize="Large" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <!-- User Details -->
+            <StackLayout Spacing="15" Padding="20">
+                <Frame HasShadow="False" Padding="10" CornerRadius="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="icon_user.png" WidthRequest="24" HeightRequest="24" />
+                        <Label Text="{Binding Profile.Username}" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="False" Padding="10" CornerRadius="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="icon_home.png" WidthRequest="24" HeightRequest="24" />
+                        <Label Text="{Binding Profile.CampusAddress}" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="False" Padding="10" CornerRadius="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="icon_phone.png" WidthRequest="24" HeightRequest="24" />
+                        <Label Text="{Binding Profile.PhoneNumber}" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="False" Padding="10" CornerRadius="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="icon_health.png" WidthRequest="24" HeightRequest="24" />
+                        <Label Text="{Binding Profile.HealthId}" VerticalOptions="Center" IsEnabled="False"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="False" Padding="10" CornerRadius="10">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="icon_email.png" WidthRequest="24" HeightRequest="24" />
+                        <Label Text="{Binding Profile.Email}" VerticalOptions="Center" IsEnabled="False"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <!-- Edit Profile Button -->
+            <StackLayout Padding="20">
+                <Button Text="Edit Profile" BackgroundColor="Purple" TextColor="White" CornerRadius="10" VerticalOptions="End" HeightRequest="50" Command="{Binding EditProfileCommand}"/>
+            </StackLayout>
+            <StackLayout Padding="20, 0, 20, 20">
+                <Button Clicked="OnLogoutButtonClicked" Text="Logout" BackgroundColor="Purple" TextColor="White" CornerRadius="10" VerticalOptions="End" HeightRequest="50"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

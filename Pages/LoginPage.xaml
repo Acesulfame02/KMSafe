@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Safe.Pages.LoginPage"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+            <Label Text="Welcome back! Glad to see you, Again!" FontSize="20" FontAttributes="Bold" Margin="0,0,0,20"/>
+            <Entry x:Name="Username" Placeholder="Enter your email" HeightRequest="40" Margin="0,10"/>
+            <Entry x:Name="Password" Placeholder="Enter your password" IsPassword="True" HeightRequest="40" Margin="0,10"/>
+            <Label Text="Forgot Password?" HorizontalOptions="End" Margin="0,10"/>
+            <Button Text="Login" Clicked="OnLogin" BackgroundColor="#0547f0" HeightRequest="50" Margin="0,10"/>
+            <Label Text="Or Login with" HorizontalOptions="Center" Margin="0,10"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image Source="google_logo.png" HeightRequest="80" WidthRequest="120" Margin="5"/>
+            </StackLayout>
+            <Label Text="Don't have an account?" HorizontalOptions="Center" Margin="0,20"/>
+            <Button Text="Register Now" TextColor="Black" Clicked="OnRegister" BackgroundColor="Transparent" FontAttributes="Bold" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

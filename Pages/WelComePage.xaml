@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Safe.Pages.WelComePage"
+             Title="WelComePage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Safety Check" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Frame BorderColor="LightGray" Padding="15" CornerRadius="10">
+                <StackLayout Spacing="10">
+                    <Label Text="Are you in immediate danger?" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Call Your Hall Warden" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="If you are not in immediate danger, you can report an incident to your school." HorizontalOptions="Center" />
+
+                    <Frame BackgroundColor="White" CornerRadius="10" BorderColor="LightGray">
+                        <StackLayout Orientation="Horizontal" Spacing="10" Padding="10">
+                            <Image Source="google.png" WidthRequest="60" HeightRequest="60" />
+                            <StackLayout Spacing="5">
+                                <Label Text="Report Incident" FontSize="16" FontAttributes="Bold" />
+                                <Label Text="Let us know if something doesn't feel right." />
+                                <Button Text="Get started"  BackgroundColor="#5D5FEF" TextColor="White" CornerRadius="5" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Spacing="15">
+                <Frame BorderColor="LightGray" CornerRadius="10">
+                    <Grid Padding="15" BackgroundColor="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icon_history.png" WidthRequest="30" HeightRequest="30" Grid.Column="0" />
+                        <StackLayout Grid.Column="1" Padding="10,0">
+                            <Label Text="View Incident History" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="See all past reports" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <Frame BorderColor="LightGray" CornerRadius="10">
+                    <Grid Padding="15" BackgroundColor="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icon_outgoing_call.png" WidthRequest="30" HeightRequest="30" Grid.Column="0" />
+                        <StackLayout Grid.Column="1" Padding="10,0">
+                            <Label Text="Emergency Contacts" FontSize="16" FontAttributes="Bold" />
+                            <Button HorizontalOptions="Start" Clicked="EmergencyContactClicked" Text="Call right now" BackgroundColor="Transparent" TextColor="Black" CornerRadius="10" VerticalOptions="End" HeightRequest="50"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <Frame BorderColor="LightGray" CornerRadius="10">
+                    <Grid Padding="15" BackgroundColor="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icon_settings.png" WidthRequest="30" HeightRequest="30" Grid.Column="0" />
+                        <StackLayout Grid.Column="1" Padding="10,0">
+                            <Label Text="Settings" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="Manage your account and notifications" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

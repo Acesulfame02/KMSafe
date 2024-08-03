@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Safe.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Safe.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Safe">
+    <Shell.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#222"
+                                   StatusBarStyle="LightContent"/>
+    </Shell.Behaviors>
+    <!-- Landing Page -->
+    <ShellContent
+        Title="Landing Page"
+        ContentTemplate="{DataTemplate pages:LandPage}"
+        Route="LandPage" />
+
+    <!-- TabBar for Welcome Page and its children -->
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            Icon="icon_home.png"
+            ContentTemplate="{DataTemplate pages:WelComePage}"
+            Route="WelcomePage" />
+        <ShellContent
+            Title="Reports"
+            Icon="icon_report.png"
+            ContentTemplate="{DataTemplate pages:ReportPage}"
+            Route="ReportPage" />
+        <ShellContent
+            Title="Profile"
+            Icon="icon_user.png"
+            ContentTemplate="{DataTemplate pages:ProfilePage}"
+            Route="ProfilePage" />
+    </TabBar>
+    <ShellItem Route="LoginPage">
+        <ShellContent ContentTemplate="{DataTemplate pages:LoginPage}" />
+    </ShellItem>
+
+    <ShellItem Route="RegisterPage">
+        <ShellContent ContentTemplate="{DataTemplate pages:RegisterPage}" />
+    </ShellItem>
+
+    <ShellContent Title="Full Report" ContentTemplate="{DataTemplate pages:FullReportPage}" Route="FullReportPage"/>
+    <ShellContent Title="New Report" ContentTemplate="{DataTemplate pages:NewReportPage}" Route="NewReportPage"/>
+    <ShellContent Title="Emergency Contacts" ContentTemplate="{DataTemplate pages:EmergencyContactsPage}" Route="EmergencyContactsPage"/>
+
+</Shell>

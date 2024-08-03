@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Safe.Pages.RegisterPage"
+             Title="RegisterPage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+            <Label Text="Hello! Register to get started" FontSize="20" FontAttributes="Bold" Margin="0,0,0,20"/>
+            <Entry x:Name="Email" Placeholder="Email" HeightRequest="40" Margin="0,10"/>
+            <Entry x:Name="Password" Placeholder="Password" IsPassword="True" HeightRequest="40" Margin="0,10"/>
+            <Button Text="Register" Clicked="OnRegister" BackgroundColor="#0547f0" HeightRequest="50" Margin="0,10"/>
+            <Label Text="Or Register with" HorizontalOptions="Center" Margin="0,10"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image Source="google_logo.png" HeightRequest="80" WidthRequest="120" Margin="5"/>
+            </StackLayout>
+            <Label Text="Already have an account?" HorizontalOptions="Center" Margin="0,20"/>
+            <Button Text="Login Now" TextColor="Black" Clicked="OnLogin" BackgroundColor="Transparent" FontAttributes="Bold" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

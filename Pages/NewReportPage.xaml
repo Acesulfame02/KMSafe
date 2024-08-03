@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Safe.ViewModel"
+             x:Class="Safe.Pages.NewReportPage"
+             Shell.NavBarIsVisible="False"
+             Title="New Report Page">
+    <ContentPage.BindingContext>
+        <vm:NewReportViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Please Feel free to Report any Incidences"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Button Grid.Column="1" Text="X"
+                        FontSize="18"
+                        TextColor="White"
+                        BackgroundColor="Red"
+                        Command="{Binding CancelCommand}" />
+            </Grid>
+
+            <!-- Form Fields -->
+            <Entry Text="{Binding Report.Title}" Placeholder="Title" />
+
+            <!-- Type Dropdown -->
+            <Picker Title="Type" ItemsSource="{Binding TypeOptions}" SelectedItem="{Binding Report.Type}" />
+
+            <!-- Severity Dropdown -->
+            <Picker Title="Severity" ItemsSource="{Binding SeverityOptions}" SelectedItem="{Binding Report.Severity}" />
+
+            <!-- Message Dropdown -->
+            <Picker Title="Message" ItemsSource="{Binding MessageOptions}" SelectedItem="{Binding Report.Message}" />
+
+            <Entry Text="{Binding Report.Description}" Placeholder="Description" />
+
+            <!-- Submit Button -->
+            <Button Text="Submit Report"
+                    FontSize="18"
+                    TextColor="White"
+                    BackgroundColor="#007AFF"
+                    Command="{Binding SubmitReportCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Safe.Pages.LandPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BackgroundImageSource>
+        <!-- Replace with your actual online image URL -->
+        <UriImageSource Uri="https://i.pinimg.com/474x/bc/c8/35/bcc835abd2c2d22b49692dfda63ec93d.jpg" />
+    </ContentPage.BackgroundImageSource>
+    <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Padding="5">
+        <Button Text="Login" FontSize="20" Command="{Binding LoginBtn}" FontAttributes="Bold" BackgroundColor="#6d91ee" HeightRequest="50" WidthRequest="250" Margin="0,20" />
+        <Button Text="Register" FontSize="20" Command="{Binding RegisterBtn}" FontAttributes="Bold" BackgroundColor="#2f66f4" HeightRequest="50" Margin="0, 0,0, 90" />
+    </StackLayout>
+</ContentPage>

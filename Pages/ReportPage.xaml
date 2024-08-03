@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Safe.Pages"
+             xmlns:vm="clr-namespace:Safe.ViewModel"
+             xmlns:converters="clr-namespace:Safe.Converters"
+             Shell.NavBarIsVisible="False"
+             x:Class="Safe.Pages.ReportPage"
+             Title="Reports">
+    <ContentPage.BindingContext>
+        <vm:ReportViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20">
+        <Label Text="Report History" 
+               FontSize="Large" 
+               FontAttributes="Bold" 
+               VerticalOptions="Start" 
+               HorizontalOptions="Start" />
+
+        <!-- Filter Picker -->
+        <Picker Title="Select Filter"
+                ItemsSource="{Binding FilterOptions}"
+                SelectedItem="{Binding SelectedFilterOption}"
+                HorizontalOptions="FillAndExpand" />
+
+        <!-- Loader -->
+        <ActivityIndicator IsRunning="{Binding IsLoading}" 
+                           IsVisible="{Binding IsLoading}"
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="Center" />
+
+        <!-- No Reports Message -->
+        <Label Text="No reports available"
+               FontSize="Medium"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label" Binding="{Binding HasReports}" Value="True">
+                    <Setter Property="IsVisible" Value="False" />
+                </DataTrigger>
+                <DataTrigger TargetType="Label" Binding="{Binding HasReports}" Value="False">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <!-- List of Reports -->
+        <CollectionView x:Name="ReportsCollectionView" ItemsSource="{Binding Reports}" VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Date}" FontSize="Medium" />
+                            <Label Text="{Binding Type}" FontSize="Small" TextColor="Gray" />
+                        </StackLayout>
+                        <Button Text="View Full Report" BackgroundColor="Transparent" TextColor="Black" FontAttributes="Bold" HorizontalOptions="End" Command="{Binding BindingContext.ViewReportCommand, Source={x:Reference ReportsCollectionView}}" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Triggers>
+                <DataTrigger TargetType="CollectionView" Binding="{Binding HasReports}" Value="False">
+                    <Setter Property="IsVisible" Value="False" />
+                </DataTrigger>
+                <DataTrigger TargetType="CollectionView" Binding="{Binding HasReports}" Value="True">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+            </CollectionView.Triggers>
+        </CollectionView>
+
+        <!-- Start a New Report Button -->
+        <Button Text="Start a New Report" 
+                HorizontalOptions="Center" 
+                VerticalOptions="End"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BackgroundColor="#ccc7c7"
+                Command="{Binding StartNewReportCommand}"
+                Margin="0,10,0,0"/>
+    </StackLayout>
+</ContentPage>

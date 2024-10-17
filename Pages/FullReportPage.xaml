@@ -8,61 +8,61 @@
         <Frame Padding="20" CornerRadius="10" HasShadow="True" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="300">
             <StackLayout Spacing="10">
 
-                <Label Text="Report Details" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+                <Label TextColor="Black" Text="Report Details" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Date" FontAttributes="Bold"/>
-                        <Label Text="{Binding Date}"/>
+                        <Label TextColor="Black" Text="Date" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding Date}"/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Time" FontAttributes="Bold"/>
-                        <Label Text="{Binding Time}"/>
+                        <Label TextColor="Black" Text="Time" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding Time}"/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Email" FontAttributes="Bold"/>
-                        <Label Text="{Binding UserId}"/>
+                        <Label TextColor="Black" Text="Email" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding UserId}"/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Title" FontAttributes="Bold"/>
-                        <Label Text="{Binding Title}"/>
+                        <Label TextColor="Black" Text="Title" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding Title}"/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Type" FontAttributes="Bold"/>
-                        <Label Text="{Binding Type}"/>
+                        <Label TextColor="Black" Text="Type" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding Type}"/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Severity" FontAttributes="Bold"/>
-                        <Label Text="{Binding Severity}"/>
+                        <Label TextColor="Black" Text="Severity" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding Severity}"/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Message" FontAttributes="Bold"/>
-                        <Label Text="{Binding Message}"/>
+                        <Label TextColor="Black" Text="Message" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding Message}"/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <StackLayout>
-                        <Label Text="Description" FontAttributes="Bold"/>
-                        <Label Text="{Binding Description}" WidthRequest="250" LineBreakMode="WordWrap" LineHeight="1.8" />
+                        <Label TextColor="Black" Text="Description" FontAttributes="Bold"/>
+                        <Label TextColor="Black" Text="{Binding Description}" WidthRequest="250" LineBreakMode="WordWrap" LineHeight="1.8" />
                     </StackLayout>
                 </StackLayout>
 

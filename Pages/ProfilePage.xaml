@@ -39,28 +39,28 @@
                 <Frame HasShadow="False" Padding="10" CornerRadius="10">
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <Image Source="icon_user.png" WidthRequest="24" HeightRequest="24" />
-                        <Label Text="{Binding Profile.Username}" VerticalOptions="Center" />
+                        <Label TextColor="Black" Text="{Binding Profile.Username}" VerticalOptions="Center" />
                     </StackLayout>
                 </Frame>
 
                 <Frame HasShadow="False" Padding="10" CornerRadius="10">
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <Image Source="icon_home.png" WidthRequest="24" HeightRequest="24" />
-                        <Label Text="{Binding Profile.CampusAddress}" VerticalOptions="Center" />
+                        <Label  TextColor="Black" Text="{Binding Profile.CampusAddress}" VerticalOptions="Center" />
                     </StackLayout>
                 </Frame>
 
                 <Frame HasShadow="False" Padding="10" CornerRadius="10">
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <Image Source="icon_phone.png" WidthRequest="24" HeightRequest="24" />
-                        <Label Text="{Binding Profile.PhoneNumber}" VerticalOptions="Center" />
+                        <Label  TextColor="Black" Text="{Binding Profile.PhoneNumber}" VerticalOptions="Center" />
                     </StackLayout>
                 </Frame>
 
                 <Frame HasShadow="False" Padding="10" CornerRadius="10">
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <Image Source="icon_health.png" WidthRequest="24" HeightRequest="24" />
-                        <Label Text="{Binding Profile.HealthId}" VerticalOptions="Center" IsEnabled="False"/>
+                        <Label TextColor="Black" Text="{Binding Profile.HealthId}" VerticalOptions="Center" IsEnabled="False"/>
                     </StackLayout>
                 </Frame>
 

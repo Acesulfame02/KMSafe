@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Services/FirebaseEmergencyContactService.cs
+/Services/KMSafeFireAuth.cs
+/Services/ProfileFireService.cs
+/Services/ReportFireService.cs

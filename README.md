@@ -2,9 +2,18 @@
 
 This documentation provides an overview of the **Student Safety and Emergency System** project. The project aims to improve emergency reporting and response at **Kapasa Makasa University** by leveraging modern technologies like **.NET MAUI** and **Firebase** for cross-platform compatibility and real-time data handling.
 
-![Landing Page](land_screen.png)
-
-![Splash Screen](splash_screen.png)
+<p>
+  <div style="display: flex; justify-content: center;">
+    <figure style="margin: 0 10px;">
+        <img src="land_screen.png" width="200" />
+        <figcaption>Landing Page</figcaption>
+    </figure>
+    <figure style="margin: 0 10px;">
+        <img src="splash_screen.png" width="200" />
+        <figcaption>Splash Screen</figcaption>
+    </figure>
+  </div>
+</p>
 
 ---
 
@@ -73,7 +82,20 @@ Firebase is used to manage user authentication. The authentication process suppo
 - **AuthViewModel.cs** handles user authentication:
   - `LoginBtnTappedAsync`: Manages user login.
   - `RegisterUserTappedAsync`: Handles user registration.
-![Login](login_screen.png)![Register](register_screen.png)
+
+<p>
+  <div style="display: flex; justify-content: center;">
+    <figure style="margin: 0 10px;">
+        <img src="login_screen.png" width="200" />
+        <figcaption>Login Page</figcaption>
+    </figure>
+    <figure style="margin: 0 10px;">
+        <img src="register_screen.png" width="200" />
+        <figcaption>Register Screen</figcaption>
+    </figure>
+  </div>
+</p>
+
 Sample code for login:
 
 ```csharp
@@ -90,8 +112,20 @@ Users can submit emergency reports using the **NewReportPage**. The report submi
 
 - **FirebaseReportService.cs** handles the storage of reports in the Firebase Realtime Database.
 - **NewReportViewModel.cs** manages the report submission process and validation.
-![Report Tab](report_screen.png)
-![New Report Page](newreport_screen.png)
+
+<p>
+  <div style="display: flex; justify-content: center;">
+    <figure style="margin: 0 10px;">
+        <img src="report_screen.png" width="200" />
+        <figcaption>Report Tab</figcaption>
+    </figure>
+    <figure style="margin: 0 10px;">
+        <img src="newreport_screen.png" width="200" />
+        <figcaption>New Report Page</figcaption>
+    </figure>
+  </div>
+</p>
+
 Sample code for submitting a report:
 
 ```csharp
@@ -121,7 +155,16 @@ _firebaseReportService.SubscribeToReports(_userId, report =>
 #### 4.4 Profile Management
 
 Users can manage their personal details (e.g., contact info) via the **ProfilePage**. Firebase is used to store and update profile information in real-time.
-![Profile Page](profile_screen.png)
+
+<p>
+  <div style="display: flex; justify-content: center;">
+    <figure style="margin: 0 10px;">
+        <img src="profile_screen.png" width="200" />
+        <figcaption>Profile Page</figcaption>
+    </figure>
+  </div>
+</p>
+
 Sample code for updating a profile:
 
 ```csharp
